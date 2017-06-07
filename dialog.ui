@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>264</width>
+    <height>312</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MS43 CAN DECODER</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>6</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Fuel Level (%)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="fuel_lcdNumber">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="smallDecimalPoint">
+       <bool>false</bool>
+      </property>
+      <property name="digitCount">
+       <number>2</number>
+      </property>
+      <property name="value" stdset="0">
+       <double>0.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>66</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>RPM</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="rpm_lcdNumber">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>126</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Odometer (miles)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="odometer_lcdNumber">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="digitCount">
+       <number>6</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>186</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Speed (MPH)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="speed_lcdNumber">
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="digitCount">
+       <number>2</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>246</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Temperature (C)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="temperature_lcdNumber">
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="smallDecimalPoint">
+       <bool>false</bool>
+      </property>
+      <property name="digitCount">
+       <number>3</number>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Filled</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>fuel_lcdNumber</zorder>
+  <zorder>fuel_lcdNumber</zorder>
+  <zorder>rpm_lcdNumber</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>odometer_lcdNumber</zorder>
+  <zorder>label_4</zorder>
+  <zorder>speed_lcdNumber</zorder>
+  <zorder>label_4</zorder>
+  <zorder>temperature_lcdNumber</zorder>
+  <zorder>label_5</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
