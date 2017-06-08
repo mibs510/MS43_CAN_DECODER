@@ -24,8 +24,10 @@ private:
     QSerialPort *arduino;
     QString arduino_port_name;
     QByteArray serialData;
-    static const quint16 arduino_vendor_id = 6790;
-    static const quint16 arduino_product_id = 29987;
+    // TODO: Confirm each set of vid's and pid's, possibly add more?
+    static const int SIZE_OF_IDS = 5;
+    quint16 arduino_vendor_id[SIZE_OF_IDS] = {6790,9025,9025,10755,9025};
+    quint16 arduino_product_id[SIZE_OF_IDS] = {29987,67,1,67,579};
 
     int odometer, last_rpm, rpm, speed, temp;
     double fuel_level ;

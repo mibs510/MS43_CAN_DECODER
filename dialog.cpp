@@ -24,21 +24,23 @@ Dialog::Dialog(QWidget *parent) :
             qDebug() << "Vendor ID: " << serialPortInfo.vendorIdentifier();
         if (serialPortInfo.hasProductIdentifier())
             qDebug() << "Product ID: " << serialPortInfo.productIdentifier();
-        if ((serialPortInfo.vendorIdentifier() == arduino_vendor_id) && (serialPortInfo.productIdentifier() == arduino_product_id)){
-            arduino_available = true;
-            qDebug() << "Opening " << serialPortInfo.portName();
-            arduino->setPortName(serialPortInfo.portName());
-            arduino->open(QSerialPort::ReadOnly);
-            arduino->setBaudRate(QSerialPort::Baud115200);
-            arduino->setDataBits(QSerialPort::Data8);
-            arduino->setParity(QSerialPort::NoParity);
-            arduino->setStopBits(QSerialPort::OneStop);
-            arduino->setFlowControl(QSerialPort::NoFlowControl);
-            QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
+        for (int i = 0; i < SIZE_OF_IDS; i++){
+            if ((serialPortInfo.vendorIdentifier() == arduino_vendor_id[i]) && (serialPortInfo.productIdentifier() == arduino_product_id[i])){
+                arduino_available = true;
+                qDebug() << "Opening " << serialPortInfo.portName();
+                arduino->setPortName(serialPortInfo.portName());
+                arduino->open(QSerialPort::ReadOnly);
+                arduino->setBaudRate(QSerialPort::Baud115200);
+                arduino->setDataBits(QSerialPort::Data8);
+                arduino->setParity(QSerialPort::NoParity);
+                arduino->setStopBits(QSerialPort::OneStop);
+                arduino->setFlowControl(QSerialPort::NoFlowControl);
+                QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
+            }
         }
     }
     if (!arduino_available)
-        QMessageBox::warning(this, "Hardware error!", "Couldn't find available arduino!");
+        QMessageBox::warning(this, "Hardware error!", "Couldn't find an available Arduino UNO!");
 }
 
 Dialog::~Dialog()
